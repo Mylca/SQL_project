@@ -117,8 +117,8 @@ LEFT JOIN price_changes p
     ON g.year = p.year  
     OR (g.year = p.year - 1)  
     OR (g.year = p.year + 1)  
-JOIN avg_price_changes avg_price ON 1=1
-JOIN avg_gdp_changes avg_gdp ON 1=1
+CROSS JOIN avg_price_changes avg_price 
+CROSS JOIN avg_gdp_changes avg_gdp 
 GROUP BY g.year
 ORDER BY g.year DESC;
 
@@ -165,8 +165,8 @@ LEFT JOIN salary_changes s
     ON g.year = s.year  
     OR (g.year = s.year - 1)  
     OR (g.year = s.year + 1)  
-JOIN avg_salary_changes avg_salary ON 1=1
-JOIN avg_gdp_changes avg_gdp ON 1=1
+CROSS JOIN avg_salary_changes avg_salary 
+CROSS JOIN avg_gdp_changes avg_gdp 
 WHERE g.gdp_change IS NOT NULL AND s.salary_change IS NOT NULL
 GROUP BY g.year
 ORDER BY g.year DESC;
