@@ -9,7 +9,7 @@ SELECT
 	currency,
 	ROUND(AVG(t.avg_salary) / price) AS purchase_quantity,
 	price_unit
-FROM t_Milan_Komurka_project_SQL_primary_final t 
+FROM t_Milan_Komurka_project_SQL_primary_final  
 WHERE 
 	year IN (2006, 2018)
 	AND code IN (111301, 114201)
